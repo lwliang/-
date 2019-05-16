@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    String.prototype.replaceH = function () {
+        return this.replace('h', "掘创");
+    };//给所有字符串对象添加replaceH的方法
+
+
+    var str = new String("hello");
+
+    // str.replaceH = function () {
+    //     str = this.replace('h', "掘创");//this==str
+    // }
+    console.log(str.replaceH());//h->掘创
+
+    //console.log(str);//掘创ello
+
+    var str2 = new String("hoooo");
+    console.log(str2.replaceH());//str2能不能调用replaceH() 报错
+</script>
+</body>
+</html>

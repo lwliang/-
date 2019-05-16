@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // String.prototype.replaceH = function () {
+    //     return this.replace('h', "掘创");
+    // };//给所有字符串对象添加replaceH的方法
+
+    // //反转
+    // function fanZhuan(str) {
+    //     var newStr = "";
+    //
+    //     for (var i = str.length - 1; i >= 0; i--) {
+    //         newStr += str[i];
+    //     }
+    //
+    //     return newStr;
+    // }
+
+    String.prototype.fanZhuan = function () {
+        // var newStr = "";
+        //
+        // for (var i = this.length - 1; i >= 0; i--) {
+        //     newStr += this[i];
+        // }
+        //
+        // return newStr;
+        return this.reverse();
+    }
+
+    // var fanzStr = "爱因斯坦".fanZhuan().fanZhuan();
+    // console.log(fanZhuan("掘创"));
+    var fanzStr = "爱因斯坦".reverse();//内置反转方法
+    console.log(fanzStr);
+    // var str = new String("掘创");
+    //
+    // var str2 = str.dd();//str2='创掘';
+
+
+</script>
+
+</body>
+</html>

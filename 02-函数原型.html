@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        // this.sayName = function () {
+        //     console.log(this.name)
+        // }
+
+    }
+
+    //每一个构造函数，会自带一个叫prototype属性
+
+    Person.prototype.sayName = function () {
+        console.log(this.name)
+    };//这里添加公用的方法
+
+
+    var p1 = new Person("掘创", 20);
+    p1.sayName = function () {
+        console.log("sayName");
+    }
+    p1.sayName();//输出p1.name 掘创
+    //p1.sayHello();//p1这个对象，和p1的原型都没有，就会报错
+    console.log(p1.sayHello); //显示undefined
+    console.log(p1.__proto__ === Person.prototype);
+    var p2 = new Person("掘创2", 21);
+    p2.sayName();//输出p2.name 掘创2
+
+
+</script>
+</body>
+</html>

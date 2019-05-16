@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function Person(name, age) {
+        // 当使用 new 操作符调用 Person() 的时候，实际上这里会先创建一个对象
+        // var instance = {}
+        // 然后让内部的 this 指向 instance 对象
+        // this = instance
+        // 接下来所有针对 this 的操作实际上操作的就是 instance
+
+        this.name = name
+        this.age = age
+        this.sayName = function () {
+            console.log(this.name)
+        }
+
+        // 在函数的结尾处会将 this 返回，也就是 instance
+        // return this
+    }
+
+
+    var p1 = new Person('掘创',30);
+
+    console.log(p1.constructor === Person);//对象实例中一定有一个属性指向它的构造函数
+
+
+    function dog() {
+
+    }
+
+
+    var d1 = new dog();
+
+    console.log(d1.constructor === dog);
+</script>
+
+</body>
+</html>
