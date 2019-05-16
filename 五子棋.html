@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/五子棋.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wu {
+            border: 1px black solid;
+            width: 495px;
+            height: 495px;
+            margin: 0 auto;
+        }
+
+        .gezi {
+            display: inline-block;
+        }
+
+        #tip {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wu"></div>
+<div id="tip">
+    白棋下棋
+</div>
+
+<script>
+
+    var wuziDom = document.getElementsByClassName("wu")[0];
+    var wuziqi = new WuZiQi(wuziDom, 15, 15, 0, wuziqi_tip);//创建五子棋
+    wuziqi.start();//开始游戏
+
+
+    //回调函数
+    function wuziqi_tip(msg) {
+        var tip = document.getElementById("tip");
+        if (typeof msg == 'boolean') {//说明游戏结束
+            var msgTip = msg ? "白旗win，" : "黑棋win，";
+            tip.innerText = msgTip + "游戏结束,按F5重新开始";
+            wuziqi.end();//开始游戏
+        } else {
+            tip.innerText = msg;
+        }
+
+
+    }
+</script>
+</body>
+</html>
